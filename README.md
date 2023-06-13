@@ -2,7 +2,7 @@
 
 - 🔭 I’m currently working on UX / UI Designer for Vale S.A
 - 🌱 I’m currently learning React Native
-- 🤔 I’m looking for help with to move to Toronto, Canada
+- 🤔 I’m looking for help with to move to Vancouver, Canada
 - 😄 Pronouns: he/him
 
 <div>

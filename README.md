@@ -1,6 +1,6 @@
 ## Hi there, I am Rafael Cavalcante! 👋
 
-- 🔭 I’m currently working on UX / UI Designer for Americanas S.A
+- 🔭 I’m currently working on UX / UI Designer for Vale S.A
 - 🌱 I’m currently learning React Native
 - 🤔 I’m looking for help with to move to Toronto, Canada
 - 😄 Pronouns: he/him

@@ -3,7 +3,7 @@
 - 🔭 I’m currently working on UX / UI Designer for Cavalcante Digital Services
 - 🌱 I’m currently learning React Native
 - 🤔 I’m looking for help with to move to Vancouver, Canada
-- 😄 Pronouns: he/him
+
 
 <div>
   <a href="https://linktr.ee/rafacavalcante">

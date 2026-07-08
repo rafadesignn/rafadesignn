@@ -123,7 +123,7 @@ export function Nav() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-[75] flex flex-col justify-between bg-background/95 px-6 pb-10 pt-28 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-[55] flex flex-col justify-between bg-background/95 px-6 pb-10 pt-28 backdrop-blur-2xl md:hidden"
             initial={{ opacity: 0, y: -24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }}

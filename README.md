@@ -4,6 +4,16 @@
 - 🌱 I’m currently learning React Native
 - 🤔 I’m looking for help with to move to Vancouver, Canada
 
+## 🎨 Portfolio landing page
+
+This repo also contains my portfolio landing page — a dark, motion-rich single page built with **Next.js (App Router) + Tailwind CSS v4 + shadcn/ui + Motion (Framer Motion) + Lenis**.
+
+```bash
+npm install
+npm run dev    # http://localhost:3000
+npm run build  # production build
+```
+
 
 <div>
   <a href="https://linktr.ee/rafacavalcante">

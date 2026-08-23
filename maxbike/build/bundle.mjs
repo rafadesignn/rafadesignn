@@ -88,6 +88,7 @@ const corpo = html
   .replace(/<\/head>\s*<body>/, '')
   .replace(/<\/body>\s*<\/html>\s*$/, '')
   .replace(/<link rel="preconnect"[^>]*>\s*/g, '')
+  .replace(/<title>[\s\S]*?<\/title>/, () => '<title>MAX Bike</title>')   // no Artifact o titulo e o nome, nao a chamada
   .replace('</title>', () => '</title>\n' + guardaViewport);
 writeFileSync(resolve(DIST, 'artifact.html'), corpo);
 console.log('dist/artifact.html ', kb(Buffer.byteLength(corpo)));

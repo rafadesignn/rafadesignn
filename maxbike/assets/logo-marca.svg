@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.00 120.00" role="img" aria-label="MAX Bike">
+  <circle cx="60" cy="60" r="54.5" fill="none" stroke="currentColor" stroke-width="6"/>
+  <g>
+    <path d="M54.47 46.30 L31.65 20.35 L20.35 31.65 L46.30 54.47 Z M46.30 65.53 L20.35 88.35 L31.65 99.65 L54.47 73.70 Z M73.70 54.47 L99.65 31.65 L88.35 20.35 L65.53 46.30 Z M65.53 73.70 L88.35 99.65 L99.65 88.35 L73.70 65.53 Z" fill="currentColor"/>
+    <circle cx="60.00" cy="60.00" r="14.96" fill="none" stroke="currentColor" stroke-width="7.14"/>
+    <circle cx="60.00" cy="60.00" r="21.08" fill="none" stroke="var(--max-accent, #FF4A17)" stroke-width="3.40" stroke-dasharray="2.78 3.84" stroke-linecap="butt"/>
+    <circle cx="60.00" cy="60.00" r="3.57" fill="var(--max-accent, #FF4A17)"/>
+  </g>
+</svg>

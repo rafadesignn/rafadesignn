@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAX Bike — bicicletas selecionadas, montadas e reguladas à mão</title>
+<meta name="description" content="Mostruário MAX Bike: speed, mountain, urbanas e elétricas. Escolha o modelo, veja em 3D e fale agora com um especialista no WhatsApp.">
+<meta name="theme-color" content="#08090A">
+<meta property="og:title" content="MAX Bike — feita para ir além">
+<meta property="og:description" content="Bicicletas selecionadas, montadas e reguladas à mão. Fale com um especialista pelo WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="src/fonts.css">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+
+<!-- palco WebGL unico, compartilhado pela home e pelo mostruario -->
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<!-- ============================ NAVEGACAO ============================ -->
+<header class="nav" id="nav">
+  <a href="#inicio" class="nav__logo" data-logo="wordmark" aria-label="MAX Bike — início"></a>
+  <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav__links" id="navlinks">
+    <a href="#colecao">Coleção</a>
+    <a href="#tecnologia">Tecnologia</a>
+    <a href="#oficina">Oficina</a>
+    <a href="#loja">A loja</a>
+    <a class="btn btn--zap nav__cta" data-zap="Olá! Vim pelo site da MAX Bike e quero falar com um especialista.">
+      <span data-zapicon></span>WhatsApp
+    </a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="section hero" id="inicio" data-stage="hero">
+  <div class="wrap above hero__inner">
+    <!-- espaco reservado ao modelo 3D: o texto nunca disputa area com ele -->
+    <div class="hero__stage" id="herostage" aria-hidden="true"></div>
+    <div class="hero__grid">
+      <div class="hero__main">
+        <p class="eyebrow rv">Loja física · desde 2009</p>
+        <h1 class="rv rv-1" style="margin-block:.6rem .9rem">Feita para<br>ir além.</h1>
+        <p class="lead hero__sub rv rv-2">
+          Bicicletas selecionadas uma a uma, montadas e reguladas na nossa bancada.
+          Escolha a sua, veja de todos os ângulos e fale agora com quem entende.
+        </p>
+      </div>
+      <div class="hero__side">
+        <div class="hero__actions rv rv-3">
+          <a class="btn btn--zap btn--lg" data-zap="Olá! Vi o site da MAX Bike e quero ajuda para escolher uma bicicleta.">
+            <span data-zapicon></span>Falar com um especialista
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#colecao">Ver a coleção</a>
+        </div>
+        <div class="hero__meta rv rv-4">
+          <div><strong>6</strong><span class="caption">modelos em linha</span></div>
+          <div><strong>72 h</strong><span class="caption">para montar e entregar</span></div>
+          <div><strong>1 ano</strong><span class="caption">de revisões grátis</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__cue" aria-hidden="true"><i></i>role</div>
+</section>
+
+<!-- ============================ O FILME ============================ -->
+<section class="section film opaque above" id="filme">
+  <div class="film__frame" id="filmframe">
+    <video id="filme-video" muted loop playsinline preload="metadata"
+           poster="assets/filme-poster.jpg" aria-label="Filme MAX Bike">
+      <source src="assets/filme-maxbike.mp4" type="video/mp4">
+    </video>
+    <div class="film__overlay">
+      <p class="eyebrow">O filme</p>
+      <h2>Cada peça tem<br>um porquê.</h2>
+      <p class="lead">Catorze segundos entre a coroa e a linha de chegada.</p>
+    </div>
+    <button class="film__ctrl" id="filmctrl" aria-label="Pausar ou tocar o filme">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="3.4" height="12" rx="1"/><rect x="8.6" y="1" width="3.4" height="12" rx="1"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ============================ MANIFESTO ============================ -->
+<section class="section paper above manifesto" id="manifesto">
+  <div class="wrap split split--wide">
+    <p class="manifesto__display">
+      <span class="line"><span>Bicicleta boa</span></span>
+      <span class="line"><span>não se compra</span></span>
+      <span class="line"><span>pela foto.</span></span>
+    </p>
+    <div class="manifesto__side">
+      <p class="lead rv">
+        Ela se escolhe no tamanho certo, com o selim na altura certa e o câmbio
+        regulado por alguém que pedala. É isso que fazemos há mais de quinze anos,
+        na mesma esquina, para mais de doze mil ciclistas.
+      </p>
+      <p class="lead rv rv-1">
+        Você escolhe o modelo aqui pelo site. O resto — ajuste, entrega e revisão —
+        a gente resolve pessoalmente.
+      </p>
+      <a class="btn btn--ghost rv rv-2" style="justify-self:start" href="#loja">Conhecer a loja</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TOUR DE ENGENHARIA ============================ -->
+<section class="section tour" id="tecnologia" data-stage="tour" style="padding-block:0">
+  <div class="wrap above" style="padding-block:var(--stack) 0">
+    <p class="eyebrow rv">Engenharia</p>
+    <h2 class="rv rv-1" style="margin-block:.7rem 1rem;max-width:16ch">Quatro pontos que separam uma bike boa de uma bike qualquer.</h2>
+  </div>
+
+  <!-- desktop: canvas fixo + cartoes que trocam conforme o scroll -->
+  <div id="tour-scroll" hidden>
+    <div class="tour__sticky">
+      <div class="wrap" style="width:100%;height:100%;position:relative">
+        <div class="tour__card" id="tour-card">
+          <p class="eyebrow" id="tour-eyebrow">01 / 04</p>
+          <h3 id="tour-title"></h3>
+          <p class="lead" id="tour-text" style="font-size:1rem"></p>
+          <div class="tour__spec" id="tour-specs"></div>
+        </div>
+        <div class="tour__progress" id="tour-progress" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="tour__steps"></div>
+  </div>
+
+  <!-- mobile / sem WebGL: as mesmas quatro paradas, empilhadas -->
+  <div class="wrap above" id="tour-stack-wrap" style="padding-block:var(--stack)">
+    <div class="tour-stack split" id="tour-stack"></div>
+  </div>
+</section>
+
+<!-- ============================ MOSTRUARIO ============================ -->
+<section class="section" id="colecao" data-stage="showcase">
+  <div class="wrap above">
+    <div class="showcase__head">
+      <p class="eyebrow rv">A coleção</p>
+      <h2 class="rv rv-1" style="max-width:18ch">Seis máquinas. Uma delas é a sua.</h2>
+      <p class="lead rv rv-2">Gire, escolha e fale direto com a loja sobre o modelo que te interessa.</p>
+    </div>
+
+    <div class="picker rv rv-3" id="picker" role="tablist" aria-label="Modelos MAX Bike"></div>
+
+    <div class="showcase__layout" style="margin-block-start:1.6rem">
+      <div class="showcase__viewer rv" id="viewer">
+        <span class="showcase__badge" id="viewer-badge">Speed</span>
+      </div>
+      <div class="showcase__info">
+        <div>
+          <h3 id="m-nome" class="rv"></h3>
+          <p class="lead rv rv-1" id="m-resumo" style="font-size:1rem;margin-block-start:.5rem"></p>
+        </div>
+        <div class="showcase__price rv rv-2">
+          <span class="caption">a partir de</span>
+          <strong id="m-preco"></strong>
+        </div>
+        <div class="showcase__specs rv rv-3" id="m-specs"></div>
+        <div class="showcase__actions rv rv-4">
+          <a class="btn btn--zap btn--lg" id="m-zap"><span data-zapicon></span>Quero esta bike</a>
+          <a class="btn btn--ghost btn--lg" id="m-zap2">Tirar uma dúvida</a>
+        </div>
+        <p class="caption rv rv-5">Retirada na loja ou entrega montada. Parcelamos em até 12x.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GRADE COMPLETA ============================ -->
+<section class="section opaque above" style="padding-block-start:0">
+  <div class="wrap">
+    <div class="grid-bikes" id="grid"></div>
+  </div>
+</section>
+
+<!-- ============================ NUMEROS ============================ -->
+<section class="section paper above" style="padding-block:0">
+  <div class="stats">
+    <div><strong data-count="16">0</strong><span>anos na mesma esquina</span></div>
+    <div><strong data-count="12" data-suffix=".000+">0</strong><span>bicicletas entregues</span></div>
+    <div><strong data-count="5" data-suffix=" mil">0</strong><span>revisões por ano</span></div>
+    <div><strong data-count="72" data-suffix=" h">0</strong><span>da compra à entrega</span></div>
+  </div>
+</section>
+
+<!-- ============================ OFICINA ============================ -->
+<section class="section opaque above" id="oficina">
+  <div class="wrap">
+    <p class="eyebrow rv">Oficina MAX</p>
+    <h2 class="rv rv-1" style="margin-block:.7rem 1rem;max-width:16ch">A venda começa no balcão e continua na bancada.</h2>
+    <p class="lead rv rv-2" style="margin-block-end:clamp(2rem,4vw,3rem)">Serviço para qualquer marca — não só para as nossas.</p>
+    <div class="services rv rv-3" id="services"></div>
+  </div>
+</section>
+
+<!-- ============================ LOJA ============================ -->
+<section class="section opaque above" id="loja">
+  <div class="wrap store">
+    <div class="store__map rv" id="map"></div>
+    <div>
+      <p class="eyebrow rv">Venha pedalar</p>
+      <h2 class="rv rv-1" style="margin-block:.7rem 1.4rem;max-width:14ch">Teste antes de levar.</h2>
+      <dl class="store__list rv rv-2" id="store-list"></dl>
+      <div class="hero__actions rv rv-3" style="margin-block-start:1.6rem">
+        <a class="btn btn--zap btn--lg" data-zap="Olá! Quero agendar um test-ride na loja MAX Bike."><span data-zapicon></span>Agendar test-ride</a>
+        <a class="btn btn--ghost btn--lg" id="rota" target="_blank" rel="noopener">Como chegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CHAMADA FINAL ============================ -->
+<section class="section finale opaque above">
+  <div class="wrap" style="display:grid;gap:1.4rem;justify-items:center">
+    <p class="eyebrow rv" style="justify-content:center">Última parada</p>
+    <h2 class="rv rv-1">A sua próxima bike está a uma mensagem daqui.</h2>
+    <p class="lead rv rv-2">Diga como você pedala e a gente indica o modelo, o tamanho e a forma de pagamento. Sem compromisso.</p>
+    <div class="finale__actions rv rv-3">
+      <a class="btn btn--zap btn--lg" data-zap="Olá! Quero uma indicação de bicicleta da MAX Bike."><span data-zapicon></span>Chamar no WhatsApp</a>
+      <a class="btn btn--ghost btn--lg" href="#colecao">Rever a coleção</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ RODAPE ============================ -->
+<footer class="footer opaque above">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo" data-logo="wordmark" aria-label="MAX Bike"></div>
+        <p class="caption" style="margin-block-start:1rem;max-width:28ch">Bicicletas selecionadas, montadas e reguladas à mão desde 2009.</p>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Coleção</h4>
+          <a href="#colecao">Speed</a><a href="#colecao">Mountain</a><a href="#colecao">Urbanas</a><a href="#colecao">Elétricas</a>
+        </div>
+        <div>
+          <h4>Serviços</h4>
+          <a href="#oficina">Montagem</a><a href="#oficina">Revisão</a><a href="#oficina">Bike fit</a>
+        </div>
+        <div>
+          <h4>A loja</h4>
+          <a href="#loja">Endereço</a><a href="#loja">Horários</a><a href="#filme">O filme</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a data-zap="Olá! Vim pelo rodapé do site da MAX Bike.">WhatsApp</a>
+          <p id="foot-email"></p>
+          <p id="foot-fone"></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__note" id="disclaimer"></p>
+      <p class="caption">© <span id="ano"></span> MAX Bike</p>
+    </div>
+  </div>
+</footer>
+
+<a class="float-zap" id="floatzap" data-zap="Olá! Estou no site da MAX Bike e quero falar com a loja.">
+  <span data-zapicon></span><span>Fale com a loja</span>
+</a>
+
+<script src="src/three.bundle.js"></script>
+<script src="src/logo-svg.js"></script>
+<script src="src/data.js"></script>
+<script src="src/bike.js"></script>
+<script src="src/studio.js"></script>
+<script src="src/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #0b0b0b;
+  --color-surface-2: #161616;
+  --color-muted: #b3b3b3;
+  --color-brand: #e50914;
+  --color-brand-dark: #b00710;
+  --color-match: #46d369;
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  background: #000;
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: rgba(229, 9, 20, 0.6);
+  color: #fff;
+}
+
+/* Safe areas (iPhone notch / Dynamic Island / home bar) */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Hide scrollbars on horizontal rails without disabling scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Momentum scroll for rails on iOS */
+.rail {
+  -webkit-overflow-scrolling: touch;
+}
+
+html.lock-scroll,
+html.lock-scroll body {
+  overflow: hidden;
+  height: 100%;
+}

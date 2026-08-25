@@ -1,58 +1,121 @@
-## Hi there, I am Rafael Cavalcante! 👋
+# HojeNoFlix ❤️
 
-- 🔭 I’m currently working on UX / UI Designer for Cavalcante Digital Services
-- 🌱 I’m currently learning React Native
-- 🤔 I’m looking for help with to move to Vancouver, Canada
+Uma experiência romântica interativa de Rafael para Lorena, no formato de
+um app de streaming: abertura estilo Netflix, a história em episódios,
+declaração, próximos episódios e o pedido de namoro.
 
+Ela só precisa de uma coisa: **o link**. Nada de login, instalação ou
+configuração — abre no Safari do iPhone e a experiência começa sozinha.
 
-<div>
-  <a href="https://linktr.ee/rafacavalcante">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=rafadesignn&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rafadesignn&layout=compact&langs_count=7&theme=dark"/>
-    </div>
- 
- <div style="display: inline_block"><br>
-  <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="Rafa-Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg">
-  <img align="center" alt="Rafa-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-  <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-</div>
-  
-  ##
-  
-  <div> 
-  <a href="https://www.youtube.com/channel/UCdymNeYil84JxGVtDpzllQg" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
-  <a href="https://instagram.com/rafaduduzao" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
- 	<a href="https://www.twitch.tv/rafadesignn" target="_blank"><img src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" target="_blank"></a>
- <a href="https://discord.gg/707529369916276737" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a> 
-  <a href = "mailto:rafadesignn@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/rafadesignn/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+---
 
- 
-</div>
-
-##
-
-## ✨ Portfolio Landing Page
-
-This repo also contains my portfolio landing page — a dark, editorial, motion-driven one-pager.
-
-**Stack:** React 19 · TypeScript · Vite · Tailwind CSS v4 · shadcn/ui · GSAP (ScrollTrigger + SplitText) · Lenis smooth scroll · Three.js shader hero
-
-**Highlights**
-
-- Preloader with counter and staggered type reveal
-- WebGL aurora background (custom GLSL, mouse-reactive, lazy-loaded)
-- Scroll-driven reveals, word-by-word about statement, animated counters
-- Custom cursor with magnetic CTA and hover labels
-- Fully responsive, honors `prefers-reduced-motion`, self-hosted fonts
-
-**Run locally**
+## Como rodar no computador
 
 ```bash
 npm install
-npm run dev      # dev server
-npm run build    # production build
-npm run preview  # preview the build
+npm run dev
 ```
+
+Abra [http://localhost:3000](http://localhost:3000).
+
+Para simular o iPhone: abra o DevTools do navegador (F12) → modo
+responsivo → escolha um viewport de 390 × 844.
+
+---
+
+## Onde colocar cada coisa
+
+### Fotos
+
+Coloque as fotos em:
+
+```
+/public/memories/01.jpg
+/public/memories/02.jpg
+/public/memories/03.jpg
+...
+```
+
+Depois registre cada uma em `src/data/story.ts` (na galeria, nos
+episódios ou nos "momentos fora do roteiro"). As 4 fotos atuais já estão
+registradas — para trocar, basta substituir os arquivos mantendo o nome,
+ou editar os caminhos no `story.ts`.
+
+### Vídeos
+
+```
+/public/videos/01.mp4
+/public/videos/02.mp4
+```
+
+Para exibir um vídeo na galeria, adicione em `src/data/story.ts` dentro de
+`gallery.items`:
+
+```ts
+{ type: "video", src: "/videos/01.mp4", caption: "..." }
+```
+
+Dica: exporte os vídeos em MP4 (H.264) para funcionar bem no iPhone.
+Se um arquivo não existir, o site não quebra — o card some sozinho.
+
+### Logo da Netflix
+
+```
+/public/branding/netflix-logo.png
+```
+
+Já está no lugar. Se quiser trocar, substitua o arquivo mantendo o nome
+(idealmente com fundo preto ou transparente).
+
+### Música
+
+```
+/public/audio/intro.mp3
+```
+
+Opcional. O iPhone bloqueia som automático, então a experiência funciona
+perfeitamente em silêncio. Se o arquivo existir, aparece um botão
+discreto "♫ Ativar som" no topo — o som só toca se ela tocar no botão.
+Se o arquivo não existir, o botão nem aparece.
+
+### Textos
+
+**Tudo** que é pessoal está em um único arquivo:
+
+```
+src/data/story.ts
+```
+
+Nomes, data, sinopse, episódios, declaração, pedido, créditos,
+pós-créditos — é só editar ali. Nenhum texto pessoal está espalhado
+pelos componentes.
+
+---
+
+## Deploy na Vercel
+
+1. Suba este projeto para um repositório no GitHub (pode ser privado).
+2. Acesse [vercel.com](https://vercel.com) e faça login com o GitHub.
+3. Clique em **Add New → Project** e importe o repositório.
+4. Não precisa mudar nenhuma configuração — clique em **Deploy**.
+5. Em ~1 minuto você recebe a URL pública (ex.: `https://hojenoflix.vercel.app`).
+6. Envie a URL para a Lorena pelo WhatsApp. 🎬
+
+O preview do link no WhatsApp é neutro de propósito ("Netflix — Tem algo
+novo para assistir." com fundo preto): nada entrega a surpresa antes de
+ela abrir.
+
+Observações:
+
+- O site não é indexado pelo Google (`noindex`) e não tem nenhum
+  rastreamento/analytics.
+- A resposta do pedido fica **somente no navegador dela**
+  (`localStorage`) — nada é enviado para servidor nenhum.
+- Depois do "SIM", o site vira "100% Match", "2 temporadas" e libera a
+  Temporada 2 automaticamente nas próximas visitas dela.
+
+---
+
+## Stack
+
+Next.js (App Router) • TypeScript • Tailwind CSS • Framer Motion • Lucide Icons

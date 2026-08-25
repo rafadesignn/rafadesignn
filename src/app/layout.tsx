@@ -7,7 +7,7 @@ import "./globals.css";
  * qualquer pista da surpresa. Só "Netflix" + fundo preto.
  */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hojenoflix.vercel.app"),
+  metadataBase: new URL("https://hojenoflix-serie.vercel.app"),
   title: "Netflix",
   description: "Tem algo novo para assistir.",
   robots: {

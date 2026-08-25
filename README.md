@@ -32,23 +32,7 @@
  
 </div>
 
-##
 
-## ✨ Portfolio Landing Page
-
-This repo also contains my portfolio landing page — a dark, editorial, motion-driven one-pager.
-
-**Stack:** React 19 · TypeScript · Vite · Tailwind CSS v4 · shadcn/ui · GSAP (ScrollTrigger + SplitText) · Lenis smooth scroll · Three.js shader hero
-
-**Highlights**
-
-- Preloader with counter and staggered type reveal
-- WebGL aurora background (custom GLSL, mouse-reactive, lazy-loaded)
-- Scroll-driven reveals, word-by-word about statement, animated counters
-- Custom cursor with magnetic CTA and hover labels
-- Fully responsive, honors `prefers-reduced-motion`, self-hosted fonts
-
-**Run locally**
 
 ```bash
 npm install

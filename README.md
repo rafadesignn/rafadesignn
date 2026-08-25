@@ -10,6 +10,7 @@ Brazil 🇧🇷 · Portugal 🇵🇹 · Open to Remote Worldwide 🌎
 
 <br>
 
+[![Portfolio](https://img.shields.io/badge/Portfolio-rafacavalcante.com-ffffff?style=for-the-badge\&logo=safari\&logoColor=000000)](https://rafacavalcante.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rafa_Cavalcante-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://linkedin.com/in/rafadesignn)
 [![Instagram](https://img.shields.io/badge/Instagram-@merafacreates-E4405F?style=for-the-badge\&logo=instagram\&logoColor=white)](https://instagram.com/merafacreates)
 [![X](https://img.shields.io/badge/X-@ItsRafaCreates-000000?style=for-the-badge\&logo=x\&logoColor=white)](https://x.com/ItsRafaCreates)
@@ -27,6 +28,8 @@ My background combines **Product Design, UI/UX, Design Systems, prototyping and 
 Today, I'm especially interested in the intersection of **Design + AI + Code**, exploring new ways of designing and building products faster without sacrificing craft.
 
 I've worked with teams and products across **Brazil, Portugal, Germany, the Netherlands and Canada**.
+
+🌐 **Portfolio:** [rafacavalcante.com](https://rafacavalcante.com)
 
 ---
 
@@ -115,6 +118,7 @@ Working with teams across:
 
 **Product Design × AI × Technology**
 
+🌐 [Portfolio](https://rafacavalcante.com) ·
 [LinkedIn](https://linkedin.com/in/rafadesignn) ·
 [Instagram](https://instagram.com/merafacreates) ·
 [X / Twitter](https://x.com/ItsRafaCreates)

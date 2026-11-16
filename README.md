@@ -12,7 +12,7 @@ Brazil 🇧🇷 · Portugal 🇵🇹 · Open to Remote Worldwide 🌎
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-rafacavalcante.com-ffffff?style=for-the-badge\&logo=safari\&logoColor=000000)](https://rafacavalcante.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Rafa_Cavalcante-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://linkedin.com/in/rafadesignn)
-[![Instagram](https://img.shields.io/badge/Instagram-@merafacreates-E4405F?style=for-the-badge\&logo=instagram\&logoColor=white)](https://instagram.com/merafacreates)
+[![Instagram](https://img.shields.io/badge/Instagram-@itsrafacreates-E4405F?style=for-the-badge\&logo=instagram\&logoColor=white)](https://instagram.com/itsrafacreates)
 [![X](https://img.shields.io/badge/X-@ItsRafaCreates-000000?style=for-the-badge\&logo=x\&logoColor=white)](https://x.com/ItsRafaCreates)
 
 </div>
@@ -120,7 +120,7 @@ Working with teams across:
 
 🌐 [Portfolio](https://rafacavalcante.com) ·
 [LinkedIn](https://linkedin.com/in/rafadesignn) ·
-[Instagram](https://instagram.com/merafacreates) ·
+[Instagram](https://instagram.com/itsrafacreates) ·
 [X / Twitter](https://x.com/ItsRafaCreates)
 
 </div>
